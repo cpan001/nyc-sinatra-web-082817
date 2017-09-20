@@ -1,0 +1,27 @@
+<h1>UPDATE YOUR LANDMARK</h1>
+
+<form action="/landmarks/<%=@landmark.id%>" method="post">
+
+  <label>Landmark Name:</label>
+  <input id="name" type="text" name="landmark[name]" value="<%=@landmark.name%>">
+
+  <br></br>
+
+  <label>Year Completed:</label>
+  <input id="year_completed" type="text" name="landmark[year_completed]" value="<%=@landmark.year_completed%>">
+
+  <br></br>
+
+  <input type="submit" value="Edit Landmark">
+
+</form>
+
+<!-- params =
+
+{ "landmark" =>
+  {"name" => "name",
+    "figure_id" => 1,
+    "year_completed" => 12
+  }
+
+} -->

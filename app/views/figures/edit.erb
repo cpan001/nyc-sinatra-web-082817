@@ -1,0 +1,48 @@
+<h1>EDIT YOUR FIGURE</h1>
+
+<form action="/figures/<%=@figure.id%>" method="post">
+
+  <label>Figure Name:</label>
+  <input id="figure_name" type="text" name="figure[name]" value="<%=@figure.name%>">
+
+  <br></br>
+
+  <label>Choose existing titles: </label><br>
+  <%Title.all.each do |title|%>
+  <input id="title_<%=title.id%>" type="checkbox" name="figure[title_ids][]" value="<%=title.id%>" <%='checked' if @figure.titles.include?(title)%>> <%=title.name%><br>
+  </input>
+  <% end %><br>
+
+  <label>And/or create a new title: </label>
+  <input id="new_title" type="text" name="title[name]"><br>
+
+  <br></br>
+
+  <label>Choose existing landmarks: </label><br>
+  <%Landmark.all.each do |landmark|%>
+  <input id="landmark_<%=landmark.id%>" type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark)%>> <%=landmark.name%><br>
+  </input>
+  <% end %><br>
+
+  <label>And/or create a new landmark: </label><br>
+  <label>Name: </label>
+  <input id="new_landmark" type="text" name="landmark[name]"><br>
+  <label>Year Completed: </label>
+  <input type="text" name="landmark[year_completed]"><br>
+
+  <br></br>
+
+  <input type="submit" value="Edit Figure">
+
+</form>
+
+
+<!-- params =
+{ figure => {
+            name => "CP",
+            title_ids => ["1", "2"],
+            landmark_ids => ["1", "2"]
+          },
+  title => {name => "title"},
+  landmark => {name => "landmark", year_completed => 2000}
+} -->

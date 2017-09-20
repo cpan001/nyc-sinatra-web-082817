@@ -1,0 +1,27 @@
+<h1>CREATE A NEW LANDMARK</h1>
+
+<form action="/landmarks" method="post">
+
+  <label>Landmark Name:</label>
+  <input id="landmark_name" type="text" name="landmark[name]">
+
+  <br></br>
+
+  <label>Year Completed:</label>
+  <input id="landmark_year_completed" type="text" name="landmark[year_completed]">
+
+  <br></br>
+
+  <input type="submit" value="Create New Landmark">
+
+</form>
+
+<!-- params =
+
+{ "landmark" =>
+  {"name" => "name",
+    "figure_id" => 1,
+    "year_completed" => 12
+  }
+
+} -->

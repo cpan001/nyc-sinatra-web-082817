@@ -1,0 +1,24 @@
+<table border="1" width="500">
+  <tr>
+    <th>Figure Name</th>
+    <th>Figure Landmarks</th>
+    <th>Figure Titles</th>
+  </tr>
+  <tr>
+    <td><%= @figure.name %></td>
+    <td>
+      <ul>
+        <% @figure.landmarks.each do |landmark| %>
+          <li><%=landmark.name%> - <%=landmark.year_completed%></li>
+        <% end %>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <% @figure.titles.each do |title| %>
+          <li><%=title.name%></li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+<table>
